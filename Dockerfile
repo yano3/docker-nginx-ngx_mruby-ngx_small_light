@@ -7,11 +7,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
     git \
     curl \
     build-essential \
-    rake \
-    bison \
-    libssl-dev \
-    libpcre3-dev \
-    zlib1g-dev \
+    ca-certificates \
     libmagickwand-dev \
  \
  && apt-mark manual libmagickwand-6.q16-3 \
@@ -36,11 +32,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
     git \
     curl \
     build-essential \
-    rake \
-    bison \
-    libssl-dev \
-    libpcre3-dev \
-    zlib1g-dev \
+    ca-certificates \
     libmagickwand-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
