@@ -1,6 +1,6 @@
-FROM yano3/nginx-ngx_mruby:1.17.0-ngx_mruby2.1.4
+FROM yano3/nginx-ngx_mruby:1.17.1-ngx_mruby2.1.4
 
-ENV NGINX_VERSION=1.17.0
+ENV NGINX_VERSION=1.17.1
 ENV NGX_SMALL_LIGHT_VERSION=0.9.2
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
