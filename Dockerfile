@@ -22,19 +22,15 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
  && ./configure \
     --with-compat \
     --add-dynamic-module=../ngx_small_light \
- && make modules \
- && cp -p ./objs/*.so /etc/nginx/modules/ \
+ && make modules
+
+FROM yano3/nginx-ngx_mruby:1.17.3-ngx_mruby2.1.4
+
+RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
+    libmagickwand-6.q16-6 \
  \
- && cd / \
- && rm -rf /usr/local/src/* \
- && apt-get remove --purge -y \
- && apt-get remove --purge --auto-remove -y \
-    git \
-    curl \
-    build-essential \
-    ca-certificates \
-    libmagickwand-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+COPY --from=0 /usr/local/src/nginx-$NGINX_VERSION/objs/*.so /etc/nginx/modules/
 COPY nginx.conf /etc/nginx/nginx.conf
