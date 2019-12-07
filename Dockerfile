@@ -1,6 +1,6 @@
-FROM yano3/nginx-ngx_mruby:1.17.5-ngx_mruby2.1.7
+FROM yano3/nginx-ngx_mruby:1.17.6-ngx_mruby2.1.8
 
-ENV NGINX_VERSION=1.17.5
+ENV NGINX_VERSION=1.17.6
 ENV NGX_SMALL_LIGHT_VERSION=0.9.2
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
     --add-dynamic-module=../ngx_small_light \
  && make modules
 
-FROM yano3/nginx-ngx_mruby:1.17.5-ngx_mruby2.1.7
+FROM yano3/nginx-ngx_mruby:1.17.6-ngx_mruby2.1.8
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
     libmagickwand-6.q16-6 \
