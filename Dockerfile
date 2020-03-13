@@ -1,6 +1,6 @@
 FROM yano3/nginx-ngx_mruby:1.17.9-ngx_mruby2.2.0
 
-ENV NGX_SMALL_LIGHT_VERSION=0.9.2
+ENV NGX_SMALL_LIGHT_VERSION 0.9.2
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
     git \
@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
  && make modules
 
 FROM yano3/nginx-ngx_mruby:1.17.9-ngx_mruby2.2.0
+
+ENV NGX_SMALL_LIGHT_VERSION 0.9.2
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
     libmagickwand-6.q16-6 \
