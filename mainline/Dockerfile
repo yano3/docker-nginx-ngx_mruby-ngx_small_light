@@ -1,4 +1,4 @@
-FROM yano3/nginx-ngx_mruby:1.17.10-ngx_mruby2.2.1
+FROM yano3/nginx-ngx_mruby:1.19.0-ngx_mruby2.2.1
 
 ENV NGX_SMALL_LIGHT_VERSION 0.9.2
 
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
     --add-dynamic-module=../ngx_small_light \
  && make modules
 
-FROM yano3/nginx-ngx_mruby:1.17.10-ngx_mruby2.2.1
+FROM yano3/nginx-ngx_mruby:1.19.0-ngx_mruby2.2.1
 
 ENV NGX_SMALL_LIGHT_VERSION 0.9.2
 
